@@ -1,3 +1,4 @@
+name: Bats Test
 on: [push]
 
 jobs:
