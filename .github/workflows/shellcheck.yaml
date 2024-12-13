@@ -1,0 +1,29 @@
+name:  ShellCheck Scan
+on:
+  push: # runs on any push to github, but not when used as a 'required workflow'
+  pull_request: # runs on any PR, required for use as a 'required workflow'
+
+  workflow_dispatch:
+  # workflow_dispatch allows this action to be run manually by the user on github.wm.com
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    # update the tag to the appropriate runner for your project, for example, 'X64, Linux, AWS, Node'
+    # must match all tags in the list of tags in the runner's 'runs-on' field
+    # runs-on: [ X64, Linux, AWS, Node ]
+    runs-on: [ cloud-devops ]
+
+    steps:
+      - name: Gather runner diagnostic info
+        uses: bwhitehead0/runner_info@v1
+        with:
+          detail-level: full # optional, full or short, default short
+
+      - uses: actions/checkout@v3
+      - name: Run ShellCheck
+
+        # use personal fork as ludeeus won't accept PR for ARM64 support
+        uses: bwhitehead0/action-shellcheck@master
+        # if your runner is x86_64, you can use the official action
+        # uses: ludeeus/action-shellcheck@master
