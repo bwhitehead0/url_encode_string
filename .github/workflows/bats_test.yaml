@@ -10,8 +10,8 @@ jobs:
           with:
             fetch-depth: 0
             submodules: true
-        - name: Set working directory
-          run: cd ${{ github.workspace }}/url_encode_string
+        # - name: Set working directory
+        #   run: cd ${{ github.workspace }}/url_encode_string
         - name: Setup bats and bats libs
           id: setup-bats
           uses: bats-core/bats-action@3.0.0
