@@ -12,7 +12,7 @@ jobs:
     # update the tag to the appropriate runner for your project, for example, 'X64, Linux, AWS, Node'
     # must match all tags in the list of tags in the runner's 'runs-on' field
     # runs-on: [ X64, Linux, AWS, Node ]
-    runs-on: [ cloud-devops ]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Gather runner diagnostic info
@@ -24,6 +24,6 @@ jobs:
       - name: Run ShellCheck
 
         # use personal fork as ludeeus won't accept PR for ARM64 support
-        uses: bwhitehead0/action-shellcheck@master
+        #uses: bwhitehead0/action-shellcheck@master
         # if your runner is x86_64, you can use the official action
-        # uses: ludeeus/action-shellcheck@master
+        uses: ludeeus/action-shellcheck@master
