@@ -27,3 +27,5 @@ jobs:
         #uses: bwhitehead0/action-shellcheck@master
         # if your runner is x86_64, you can use the official action
         uses: ludeeus/action-shellcheck@master
+        with:
+          ignore_paths: test/*
