@@ -8,7 +8,7 @@ inputs:
 outputs:
   encoded_string:
     description: The URL encoded string.
-    value: ${{ steps.get_job_id.outputs.job_id }}
+    value: ${{ steps.get_encoded_string.outputs.encoded_string }}
 runs:
   using: 'composite'
   steps:
