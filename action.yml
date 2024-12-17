@@ -14,7 +14,9 @@ runs:
   steps:
     - name: Encode string
       id: get_encoded_string
-      run: ${{ github.action_path }}/assets/encode_string.sh "${{ inputs.string }}"
+      run: |
+        result=$(${{ github.action_path }}/assets/encode_string.sh "${{ inputs.string }}")
+        echo "encoded_string=$result" >> $GITHUB_ENV
       shell: bash
 
 branding:
