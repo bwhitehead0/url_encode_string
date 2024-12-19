@@ -16,7 +16,7 @@ runs:
       id: get_encoded_string
       run: |
         result=$(${{ github.action_path }}/assets/encode_string.sh "${{ inputs.string }}")
-        echo "encoded_string=$result" >> $GITHUB_ENV
+        echo "encoded_string=$result" >> $GITHUB_OUTPUT
       shell: bash
 
 branding:
